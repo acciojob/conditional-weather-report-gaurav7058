@@ -1,16 +1,18 @@
 import React from 'react'
 
 export default function WeatherDisplay(props) {
-    const {data}=props
-  return (
-    <div>
-      {data.tempreture>20?<div style={{color:"red"}}>
-          <p>tempreture:{data.tempreture}</p>
-          <p>condition:{data.condition}</p>
-        </div>:<div style={{color:"blue"}}>
-        <p>tempreture:{data.tempreture}</p>  
-        <p>condition:{data.condition}</p>
-        </div>} 
-    </div>
-  )
+    const { data } = props;
+
+    // Define style for temperature based on the temperature value
+    const tempStyle = {
+        color: data.temperature > 20 ? "red" : "blue"
+    };
+
+    return (
+        <div>
+            {/* Apply tempStyle to the temperature */}
+            <p>Temperature: <span style={tempStyle}>{data.temperature}</span></p>
+            <p>Conditions: {data.conditions}</p>
+        </div>
+    );
 }
