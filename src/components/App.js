@@ -1,6 +1,7 @@
 
 import React, { useEffect ,useState} from "react";
 import './../styles/App.css';
+import WeatherDisplay from "./WeatherDisplay";
 
 const App = () => {
   const def = {tempreture : 0, condition : "Cool"}
@@ -12,13 +13,7 @@ const App = () => {
   },[])
   return (
     <div>
-        {data.tempreture>20?<div style={{color:"red"}}>
-          <p>tempreture:{data.tempreture}</p>
-          <p>condition:{data.condition}</p>
-        </div>:<div style={{color:"blue"}}>
-        <p>tempreture:{data.tempreture}</p>  
-        <p>condition:{data.condition}</p>
-        </div>}   
+          <WeatherDisplay data={data}></WeatherDisplay>
     </div>
   )
 }
